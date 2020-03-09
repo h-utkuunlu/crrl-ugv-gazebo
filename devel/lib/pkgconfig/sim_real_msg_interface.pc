@@ -1,0 +1,8 @@
+prefix=/home/huu201/workspace/gazebo_crrl_ugv/devel
+
+Name: sim_real_msg_interface
+Description: Description of sim_real_msg_interface
+Version: 0.0.0
+Cflags: -I/home/huu201/workspace/gazebo_crrl_ugv/devel/include -I/home/huu201/workspace/gazebo_crrl_ugv/src/sim_real_msg_interface/include
+Libs: -L${prefix}/lib 
+Requires: roscpp message_runtime

@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<robot name="crrl_ugv" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Properties -->
+  <xacro:property name="PI" value="3.1415926535897931"/>
+  <xacro:property name="chassisHeight" value="0.055"/>
+  <xacro:property name="chassisLength" value="0.44"/>
+  <xacro:property name="chassisWidth" value="0.31"/>
+  <xacro:property name="chassisMass" value="10"/>
+
+  <xacro:property name="elecBoxHeight" value="0.13"/>
+  <xacro:property name="elecBoxLength" value="0.18"/>
+  <xacro:property name="elecBoxWidth" value="0.31"/>
+  <xacro:property name="elecBoxMass" value="2"/>
+  
+  <xacro:property name="wheelWidth" value="0.1"/>
+  <xacro:property name="wheelRadius" value="0.085"/>
+  <xacro:property name="wheelMass" value="0.1"/>
+
+  <xacro:property name="fWheelPos" value="0.185"/>
+  <xacro:property name="cWheelPos" value="0"/>
+  <xacro:property name="rWheelPos" value="-0.185"/>
+
+  <xacro:property name="cameraSize" value="0.05"/>
+  <xacro:property name="cameraMass" value="0.1"/>
+  <xacro:include filename="$(find crrl_ugv_desc)/urdf/crrl_ugv.gazebo" />
+  <xacro:include filename="$(find crrl_ugv_desc)/urdf/materials.xacro" />
+  <xacro:include filename="$(find crrl_ugv_desc)/urdf/macros.xacro" />
+
+  <!-- Robot Definition -->
+  <link name="footprint" />
+  <joint name="base_joint" type="fixed">
+    <parent link="footprint"/>
+    <child link="chassis"/>
+  </joint>
+
+  <link name='chassis'>
+    <collision>
+      <origin xyz="0 0 ${wheelRadius}" rpy="0 0 0"/>
+      <geometry>
+	<box size="${chassisLength} ${chassisWidth} ${chassisHeight}"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 ${wheelRadius}" rpy="0 0 0"/>
+      <geometry>
+	<box size="${chassisLength} ${chassisWidth} ${chassisHeight}"/>
+      </geometry>
+      <material name="orange"/>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 ${wheelRadius}" rpy="0 0 0"/>
+      <mass value="${chassisMass}"/>
+      <box_inertia m="${chassisMass}" x="${chassisLength}" y="${chassisWidth}" z="${chassisHeight}"/>
+    </inertial>
+  </link>
+
+  <link name='elecBox'>
+    <collision>
+      <origin xyz="${elecBoxLength/2-chassisLength/2} 0 ${wheelRadius+chassisHeight/2+elecBoxHeight/2}" rpy="0 0 0"/>
+      <geometry>
+	<box size="${elecBoxLength} ${elecBoxWidth} ${elecBoxHeight}"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="${elecBoxLength/2-chassisLength/2} 0 ${wheelRadius+chassisHeight/2+elecBoxHeight/2}" rpy="0 0 0"/>
+       <geometry>
+	<box size="${elecBoxLength} ${elecBoxWidth} ${elecBoxHeight}"/>
+      </geometry>
+      <material name="orange"/>
+    </visual>
+    <inertial>
+      <origin xyz="${elecBoxLength/2-chassisLength/2} 0 ${wheelRadius+chassisHeight/2+elecBoxHeight/2}" rpy="0 0 0"/>
+      <mass value="${elecBoxMass}"/>
+      <box_inertia m="${elecBoxMass}" x="${elecBoxLength}" y="${elecBoxWidth}" z="${elecBoxHeight}"/>
+    </inertial>
+  </link>
+
+  <joint name="elec_chassis" type="fixed">
+    <parent link="chassis"/>
+    <child link="elecBox"/>
+  </joint>
+
+  <wheel lr="leftFwd" tY="1" pos="${fWheelPos}"/>
+  <wheel lr="leftCt" tY="1" pos="${cWheelPos}"/>
+  <wheel lr="leftBwd" tY="1" pos="${rWheelPos}"/>
+
+  <wheel lr="rightFwd" tY="-1" pos="${fWheelPos}"/>
+  <wheel lr="rightCt" tY="-1" pos="${cWheelPos}"/>
+  <wheel lr="rightBwd" tY="-1" pos="${rWheelPos}"/>
+
+</robot>

@@ -1,0 +1,23 @@
+crrl_ugv:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Effort Controllers ---------------------------------------
+  leftFwdWheel_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: leftFwd_wheel_hinge
+    pid: {p: 100.0, i: 0.1, d: 10.0}
+  leftBwdWheel_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: leftBwd_wheel_hinge
+    pid: {p: 100.0, i: 0.1, d: 10.0}
+  rightFwdWheel_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: rightFwd_wheel_hinge
+    pid: {p: 100.0, i: 0.1, d: 10.0}
+  rightBwdWheel_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: rightBwd_wheel_hinge
+    pid: {p: 100.0, i: 0.1, d: 10.0}

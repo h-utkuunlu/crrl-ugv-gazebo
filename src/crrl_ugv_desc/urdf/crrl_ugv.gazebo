@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<robot name="crrl_ugv" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- Put here the robot description -->
+  <gazebo reference="chassis">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="elecBox">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/crrl_ugv</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
+
+</robot>

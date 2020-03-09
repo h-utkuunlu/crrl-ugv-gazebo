@@ -1,0 +1,10 @@
+std_msgs/Header header
+float32 ap_time
+float32 wheel_R
+float32 wheel_L
+geometry_msgs/Vector3 gyro
+geometry_msgs/Vector3 acc1
+geometry_msgs/Vector3 acc2
+geometry_msgs/Vector3 magn
+float32 velocity
+float32 omega

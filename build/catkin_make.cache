@@ -1,0 +1,2 @@
+crrl_ugv_control:crrl_ugv_desc:crrl_ugv_gazebo:kbd_interface:sim_real_msg_interface
+-DCATKIN_DEVEL_PREFIX=/home/huu201/workspace/gazebo_crrl_ugv/devel -DCMAKE_INSTALL_PREFIX=/home/huu201/workspace/gazebo_crrl_ugv/install -G Unix Makefiles
