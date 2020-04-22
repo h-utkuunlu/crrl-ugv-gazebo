@@ -8,12 +8,34 @@
     <material>Gazebo/Grey</material>
   </gazebo>
 
-
   <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/crrl_ugv</robotNamespace>
+      <robotNamespace>/</robotNamespace>
       <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
       <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+      <updateRate>100.0</updateRate>
+      <robotNamespace>/</robotNamespace>
+      <leftFrontJoint>leftFwd_wheel_hinge</leftFrontJoint>
+      <rightFrontJoint>rightFwd_wheel_hinge</rightFrontJoint>
+      <leftRearJoint>leftBwd_wheel_hinge</leftRearJoint>
+      <rightRearJoint>rightBwd_wheel_hinge</rightRearJoint>
+      <wheelSeparation>${chassisWidth+wheelWidth+2*wheel_gap}</wheelSeparation>
+      <wheelDiameter>${2*wheelRadius}</wheelDiameter>
+      <robotBaseFrame>footprint</robotBaseFrame>
+      <torque>200</torque>
+      <MaxForce>5.0</MaxForce>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <broadcastTF>true</broadcastTF>
+      <covariance_x>0.001</covariance_x> <!-- 0.0001 -->
+      <covariance_y>0.001</covariance_y> <!-- 0.0001 -->
+      <covariance_yaw>0.01</covariance_yaw> <!-- 0.01 -->
     </plugin>
   </gazebo>
 

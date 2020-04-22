@@ -68,7 +68,7 @@
       <child link="${lr}_wheel"/>
       <origin xyz="${pos} ${tY*wheelWidth/2+tY*chassisWidth/2+gap} ${wheelRadius}" rpy="0 0 0" />
       <axis xyz="0 1 0" rpy="0 0 0" />
-      <limit effort="0.1" velocity="0.1"/>
+      <limit effort="100" velocity="100"/>
       <joint_properties damping="1.0" friction="1.0"/>
     </joint>
 
@@ -79,7 +79,7 @@
       </joint>
       <actuator name="${lr}Motor">
 	<hardwareInterface>EffortJointInterface</hardwareInterface>
-	<mechanicalReduction>1</mechanicalReduction>
+	<mechanicalReduction>10</mechanicalReduction>
       </actuator>
     </transmission>
   </macro>

@@ -27,7 +27,7 @@
   <xacro:property name="wheel_kp" value="1.0" />
   <xacro:property name="wheel_kd" value="1.0" />
   <xacro:property name="wheel_mu1" value="1" />
-  <xacro:property name="wheel_mu2" value="1" />
+  <xacro:property name="wheel_mu2" value="0.1" />
   <xacro:property name="wheel_slip1" value="0.5" />
   <xacro:property name="wheel_slip2" value="0.1" />
   <xacro:property name="wheel_gap" value="0.01" />
@@ -92,11 +92,11 @@
   </joint>
 
   <wheel lr="leftFwd" tY="1" pos="${fWheelPos}" gap="${wheel_gap}"/>
-  <!-- <wheel lr="leftCt" tY="1" pos="${cWheelPos}"/> -->
+  <!-- <wheel lr="leftCt" tY="1" pos="${cWheelPos}" gap="${wheel_gap}"/> -->
   <wheel lr="leftBwd" tY="1" pos="${rWheelPos}" gap="${wheel_gap}"/>
 
   <wheel lr="rightFwd" tY="-1" pos="${fWheelPos}" gap="${wheel_gap*-1}"/>
-  <!-- <wheel lr="rightCt" tY="-1" pos="${cWheelPos}"/> -->
+  <!-- <wheel lr="rightCt" tY="-1" pos="${cWheelPos}" gap="${wheel_gap*-1}"/> -->
   <wheel lr="rightBwd" tY="-1" pos="${rWheelPos}" gap="${wheel_gap*-1}"/>
 
 </robot>
