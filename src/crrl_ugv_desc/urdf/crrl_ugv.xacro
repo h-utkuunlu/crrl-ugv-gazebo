@@ -21,13 +21,15 @@
   <xacro:property name="cWheelPos" value="0"/>
   <xacro:property name="rWheelPos" value="-0.185"/>
 
-  <xacro:property name="cameraSize" value="0.05"/>
+  <xacro:property name="cameraSize" value="0.02"/>
   <xacro:property name="cameraMass" value="0.1"/>
-
+  <xacro:property name="cameraHeight" value="${wheelRadius*2-0.05}"/>
+  <xacro:property name="cameraBaseline" value="0.1"/>
+  
   <xacro:property name="wheel_kp" value="1.0" />
   <xacro:property name="wheel_kd" value="1.0" />
   <xacro:property name="wheel_mu1" value="1" />
-  <xacro:property name="wheel_mu2" value="0.1" />
+  <xacro:property name="wheel_mu2" value="0.5" />
   <xacro:property name="wheel_slip1" value="0.5" />
   <xacro:property name="wheel_slip2" value="0.1" />
   <xacro:property name="wheel_gap" value="0.01" />
@@ -99,4 +101,67 @@
   <!-- <wheel lr="rightCt" tY="-1" pos="${cWheelPos}" gap="${wheel_gap*-1}"/> -->
   <wheel lr="rightBwd" tY="-1" pos="${rWheelPos}" gap="${wheel_gap*-1}"/>
 
+  <joint name="camera_joint_left" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="${fWheelPos} ${cameraBaseline*0.5} ${cameraHeight}" rpy="0 0 0"/>
+    <parent link="chassis"/>
+    <child link="camera_link_left"/>
+  </joint>
+
+  <joint name="camera_joint_right" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="${fWheelPos} ${-cameraBaseline*0.5} ${cameraHeight}" rpy="0 0 0"/>
+    <parent link="chassis"/>
+    <child link="camera_link_right"/>
+  </joint>
+
+  <!-- Left Camera -->
+  <link name="camera_link_left">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	<box size="${cameraSize} ${cameraSize} ${cameraSize}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	<box size="${cameraSize} ${cameraSize} ${cameraSize}"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+    <!-- Left Camera -->
+  <link name="camera_link_right">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	<box size="${cameraSize} ${cameraSize} ${cameraSize}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	<box size="${cameraSize} ${cameraSize} ${cameraSize}"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+  
 </robot>

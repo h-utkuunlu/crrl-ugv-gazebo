@@ -22,13 +22,14 @@
 	      />
   </macro>
 
+  <!-- NOTE: Wheel collision width is reduced to improve turning. Visually accurate -->
   <macro name="wheel" params="lr tY pos gap">
 
     <link name="${lr}_wheel">
       <collision>
 	<origin xyz="0 0 0" rpy="0 ${PI/2} ${PI/2}" />
 	<geometry>
-	  <cylinder length="${wheelWidth}" radius="${wheelRadius}"/>
+	  <cylinder length="${wheelWidth*0.01}" radius="${wheelRadius}"/>
 	</geometry>
       </collision>
 

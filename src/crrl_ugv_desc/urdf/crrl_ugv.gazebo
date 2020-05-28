@@ -39,4 +39,87 @@
     </plugin>
   </gazebo>
 
+  <!-- Left Camera -->
+  <gazebo reference="camera_link_left">
+    <sensor type="camera" name="camera_left">
+      <update_rate>30.0</update_rate>
+      <camera name="left_cam">
+	<horizontal_fov>1.3962634</horizontal_fov>
+	<image>
+	  <width>640</width>
+	  <height>480</height>
+	  <format>R8G8B8</format>
+	</image>
+	<clip>
+	  <near>0.02</near>
+	  <far>300</far>
+	</clip>
+	<noise>
+	  <type>gaussian</type>
+	  <!-- Noise is sampled independently per pixel on each frame.
+	       That pixel's noise value is added to each of its color
+	       channels, which at that point lie in the range [0,1]. -->
+	  <mean>0.0</mean>
+	  <stddev>0.007</stddev>
+	</noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+	<alwaysOn>true</alwaysOn>
+	<updateRate>0.0</updateRate>
+	<cameraName>camera_left</cameraName>
+	<imageTopicName>image_raw</imageTopicName>
+	<cameraInfoTopicName>camera_info</cameraInfoTopicName>
+	<frameName>camera_link_left</frameName>
+	<hackBaseline>0.07</hackBaseline>
+	<distortionK1>0.0</distortionK1>
+	<distortionK2>0.0</distortionK2>
+	<distortionK3>0.0</distortionK3>
+	<distortionT1>0.0</distortionT1>
+	<distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <!-- Right Camera -->
+  <gazebo reference="camera_link_right">
+    <sensor type="camera" name="camera_right">
+      <update_rate>30.0</update_rate>
+      <camera name="right_cam">
+	<horizontal_fov>1.3962634</horizontal_fov>
+	<image>
+	  <width>640</width>
+	  <height>480</height>
+	  <format>R8G8B8</format>
+	</image>
+	<clip>
+	  <near>0.02</near>
+	  <far>300</far>
+	</clip>
+	<noise>
+	  <type>gaussian</type>
+	  <!-- Noise is sampled independently per pixel on each frame.
+	       That pixel's noise value is added to each of its color
+	       channels, which at that point lie in the range [0,1]. -->
+	  <mean>0.0</mean>
+	  <stddev>0.007</stddev>
+	</noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+	<alwaysOn>true</alwaysOn>
+	<updateRate>0.0</updateRate>
+	<cameraName>camera_right</cameraName>
+	<imageTopicName>image_raw</imageTopicName>
+	<cameraInfoTopicName>camera_info</cameraInfoTopicName>
+	<frameName>camera_link_right</frameName>
+	<hackBaseline>0.07</hackBaseline>
+	<distortionK1>0.0</distortionK1>
+	<distortionK2>0.0</distortionK2>
+	<distortionK3>0.0</distortionK3>
+	<distortionT1>0.0</distortionT1>
+	<distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  
 </robot>

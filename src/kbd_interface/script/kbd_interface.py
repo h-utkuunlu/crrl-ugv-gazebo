@@ -12,7 +12,7 @@ def move():
     vel_msg.velocity = 0.5
     vel_msg.omega = 0.01
 
-   while not rospy.is_shutdown():
+    while not rospy.is_shutdown():
        rospy.loginfo("Executing at %s" % rospy.get_time())
        pub.publish(vel_msg)
        rate.sleep()
