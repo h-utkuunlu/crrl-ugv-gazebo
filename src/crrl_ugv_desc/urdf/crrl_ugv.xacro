@@ -106,11 +106,11 @@
 
   <!-- Wheels -->
   <wheel lr="leftFwd" tY="1" pos="${fWheelPos}" gap="${wheel_gap}"/>
-  <!-- <wheel lr="leftCt" tY="1" pos="${cWheelPos}" gap="${wheel_gap}"/> -->
+  <wheel lr="leftCt" tY="1" pos="${cWheelPos}" gap="${wheel_gap}"/>
   <wheel lr="leftBwd" tY="1" pos="${rWheelPos}" gap="${wheel_gap}"/>
 
   <wheel lr="rightFwd" tY="-1" pos="${fWheelPos}" gap="${wheel_gap*-1}"/>
-  <!-- <wheel lr="rightCt" tY="-1" pos="${cWheelPos}" gap="${wheel_gap*-1}"/> -->
+  <wheel lr="rightCt" tY="-1" pos="${cWheelPos}" gap="${wheel_gap*-1}"/>
   <wheel lr="rightBwd" tY="-1" pos="${rWheelPos}" gap="${wheel_gap*-1}"/>
 
 
