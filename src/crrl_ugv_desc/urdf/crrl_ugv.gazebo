@@ -24,8 +24,8 @@
       <rightFrontJoint>rightFwd_wheel_hinge</rightFrontJoint>
       <leftRearJoint>leftBwd_wheel_hinge</leftRearJoint>
       <rightRearJoint>rightBwd_wheel_hinge</rightRearJoint>
-      <wheelSeparation>${chassisWidth+wheelWidth+2*wheel_gap}</wheelSeparation>
-      <wheelDiameter>${2*wheelRadius}</wheelDiameter>
+      <wheelSeparation>${chassis_width+wheel_width+2*wheel_gap}</wheelSeparation>
+      <wheelDiameter>${2*wheel_radius}</wheelDiameter>
       <robotBaseFrame>footprint</robotBaseFrame>
       <torque>200</torque>
       <MaxForce>5.0</MaxForce>
