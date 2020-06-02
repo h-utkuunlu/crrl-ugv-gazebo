@@ -44,10 +44,10 @@
     <sensor type="camera" name="camera_left">
       <update_rate>30.0</update_rate>
       <camera name="left_cam">
-	<horizontal_fov>1.3962634</horizontal_fov>
+	<horizontal_fov>1.5708</horizontal_fov>
 	<image>
-	  <width>640</width>
-	  <height>480</height>
+	  <width>1920</width>
+	  <height>1080</height>
 	  <format>R8G8B8</format>
 	</image>
 	<clip>
@@ -85,10 +85,10 @@
     <sensor type="camera" name="camera_right">
       <update_rate>30.0</update_rate>
       <camera name="right_cam">
-	<horizontal_fov>1.3962634</horizontal_fov>
+	<horizontal_fov>1.5708</horizontal_fov>
 	<image>
-	  <width>640</width>
-	  <height>480</height>
+	  <width>1920</width>
+	  <height>1080</height>
 	  <format>R8G8B8</format>
 	</image>
 	<clip>
