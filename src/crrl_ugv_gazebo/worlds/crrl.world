@@ -7,5 +7,9 @@
   <include>
     <uri>model://ground_plane</uri>
   </include>
+  <!-- For some reason sdf 1.2 version is used for willowgarage-->
+  <include>
+    <uri>model://willowgarage</uri>
+  </include>
 </world>
 </sdf>
