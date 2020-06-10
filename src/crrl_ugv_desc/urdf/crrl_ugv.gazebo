@@ -66,10 +66,11 @@
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
 	<alwaysOn>true</alwaysOn>
 	<updateRate>0.0</updateRate>
-	<cameraName>camera_left</cameraName>
+	<cameraName>left</cameraName>
+	<robotNamespace>/stereo</robotNamespace>
 	<imageTopicName>image_raw</imageTopicName>
 	<cameraInfoTopicName>camera_info</cameraInfoTopicName>
-	<frameName>camera_link_left</frameName>
+	<frameName>camera_link</frameName>
 	<hackBaseline>0.07</hackBaseline>
 	<distortionK1>0.0</distortionK1>
 	<distortionK2>0.0</distortionK2>
@@ -107,10 +108,11 @@
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
 	<alwaysOn>true</alwaysOn>
 	<updateRate>0.0</updateRate>
-	<cameraName>camera_right</cameraName>
+	<robotNamespace>/stereo</robotNamespace>
+	<cameraName>right</cameraName>
 	<imageTopicName>image_raw</imageTopicName>
 	<cameraInfoTopicName>camera_info</cameraInfoTopicName>
-	<frameName>camera_link_right</frameName>
+	<frameName>camera_link</frameName>
 	<hackBaseline>0.07</hackBaseline>
 	<distortionK1>0.0</distortionK1>
 	<distortionK2>0.0</distortionK2>

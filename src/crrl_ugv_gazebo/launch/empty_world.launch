@@ -8,7 +8,7 @@
    args="-urdf -param robot_description -model crrl_ugv" />
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find crrl_ugv_gazebo)/worlds/crrl.world"/>
+    <arg name="world_name" value="$(find crrl_ugv_gazebo)/worlds/empty.world"/>
     <arg name="gui" value="true"/>
   </include>
 

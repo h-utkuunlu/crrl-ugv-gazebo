@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- urdf xml robot description loaded on the Parameter Server, converting the xacro into a proper urdf file-->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find crrl_ugv_desc)/urdf/crrl_ugv.xacro'" />
+
+  <!-- push robot_description to factory and spawn robot in gazebo -->
+  <node name="crrl_ugv" pkg="gazebo_ros" type="spawn_model" output="screen"
+   args="-urdf -param robot_description -model crrl_ugv" />
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find crrl_ugv_gazebo)/worlds/willowgarage.world"/>
+    <arg name="gui" value="false"/>
+  </include>
+
+  <!-- ros_control crrl_ugv launch file -->
+  <include file="$(find crrl_ugv_control)/launch/crrl_ugv_control.launch" />
+
+</launch>
