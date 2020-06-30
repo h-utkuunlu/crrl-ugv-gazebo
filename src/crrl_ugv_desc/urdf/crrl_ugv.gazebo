@@ -29,7 +29,7 @@
       <robotBaseFrame>footprint</robotBaseFrame>
       <torque>200</torque>
       <MaxForce>5.0</MaxForce>
-      <commandTopic>cmd_vel</commandTopic>
+      <commandTopic>sim_cmd_vel</commandTopic>
       <odometryTopic>odom</odometryTopic>
       <odometryFrame>odom</odometryFrame>
       <broadcastTF>true</broadcastTF>
@@ -67,7 +67,7 @@
 	<alwaysOn>true</alwaysOn>
 	<updateRate>0.0</updateRate>
 	<cameraName>left</cameraName>
-	<robotNamespace>/stereo</robotNamespace>
+	<robotNamespace>/zed_node</robotNamespace>
 	<imageTopicName>image_raw</imageTopicName>
 	<cameraInfoTopicName>camera_info</cameraInfoTopicName>
 	<frameName>camera_link</frameName>
@@ -108,7 +108,7 @@
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
 	<alwaysOn>true</alwaysOn>
 	<updateRate>0.0</updateRate>
-	<robotNamespace>/stereo</robotNamespace>
+	<robotNamespace>/zed_node</robotNamespace>
 	<cameraName>right</cameraName>
 	<imageTopicName>image_raw</imageTopicName>
 	<cameraInfoTopicName>camera_info</cameraInfoTopicName>
