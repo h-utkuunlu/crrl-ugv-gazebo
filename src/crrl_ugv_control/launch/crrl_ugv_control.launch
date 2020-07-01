@@ -35,6 +35,6 @@
   <node name="sim_real_msg_interface" pkg="sim_real_msg_interface" type="sim_real_msg_interface_node" />
 
   <!-- GUI -->  
-  <node name="rviz" pkg="rviz" type="rviz" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find crrl_ugv_control)/config/rviz_conf.rviz"/>
 
 </launch>
