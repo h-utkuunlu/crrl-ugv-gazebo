@@ -1,0 +1,1 @@
+Required for sim_real_msg_interface to compile properly
