@@ -1,8 +1,0 @@
-prefix=/home/huu201/workspace/gazebo_crrl_ugv/devel
-
-Name: crrl_ugv_gazebo
-Description: Description of crrl_ugv_gazebo
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

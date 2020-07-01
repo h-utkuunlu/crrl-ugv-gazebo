@@ -1,8 +1,0 @@
-prefix=/home/huu201/workspace/gazebo_crrl_ugv/install
-
-Name: sim_real_msg_interface
-Description: Description of sim_real_msg_interface
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
-Requires: roscpp message_runtime

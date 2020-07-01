@@ -1,8 +1,0 @@
-prefix=/home/huu201/workspace/gazebo_crrl_ugv/install
-
-Name: kbd_interface
-Description: Description of kbd_interface
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
