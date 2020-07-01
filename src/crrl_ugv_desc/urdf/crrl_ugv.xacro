@@ -99,7 +99,7 @@
   </joint>
 
   <!-- VLP-16 to electrical box -->
-  <VLP-16 parent="elecBox" name="velodyne" topic="/velodyne_points" hz="10" samples="440" gpu="${gpu}">
+  <VLP-16 parent="elecBox" name="velodyne" topic="/lidar/velodyne_points" hz="10" samples="440" gpu="${gpu}">
     <origin xyz="${elec_box_length/2-chassis_length/2} 0 ${wheel_radius+chassis_height/2+elec_box_height}" rpy="0 0 0" />
   </VLP-16>
 
