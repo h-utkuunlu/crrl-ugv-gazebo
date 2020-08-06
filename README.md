@@ -9,7 +9,7 @@ Requisite files to simulate CRRL UGV on Gazebo / Ros
 1. [optional, if path is not in ROS] Run `source devel/setup.<ext>` to make packages visible. Replace `<ext>` with your shell
 1. Run `roslaunch crrl_ugv_gazebo empty_world.launch` to initiate an empty world.
 1. If Willow Garage is in your Gazebo models, you can also run  `roslaunch crrl_ugv_gazebo willowgarage.launch` with a small modification(see below)
-1. To initiate teleop, open a separate terminal and run `ROS_NAMESPACE=/ap rosrun kbd_interface kbd_interface.py`. Manual is provided on screen. 
+1. To initiate teleop, open a separate terminal and run `roslaunch kbd_interface kbd_interface.launch`. Manual is provided on screen. 
 
 * To resolve the issue with ground plane and carpet interlacing, it is necessary to lift the willowgarage world by about 1mm in their model page. In .gazebo/models/willowgarage/model-1_2.sdf, replace
 `<pose>-20 -20 0 0 0 0</pose>` with `<pose>-20 -20 0.001 0 0 0</pose>`. This way the camera images are more sensible.
