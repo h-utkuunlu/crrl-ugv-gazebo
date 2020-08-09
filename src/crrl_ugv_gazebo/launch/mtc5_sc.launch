@@ -12,12 +12,12 @@
    args="-urdf -param robot_description -model crrl_ugv" />
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find crrl_ugv_gazebo)/worlds/willowgarage.world"/>
+    <arg name="world_name" value="$(find crrl_ugv_gazebo)/worlds/mtc5_sc.world"/>
     <arg name="gui" value="$(arg gazebo_gui)"/>
   </include>
 
   <!-- ros_control crrl_ugv launch file -->
-  <include file="$(find crrl_ugv_control)/launch/crrl_ugv_control.launch" >
+  <include file="$(find crrl_ugv_control)/launch/crrl_ugv_control.launch">
     <arg name="process_stereo" value="$(arg process_stereo)"/>
   </include>
   
