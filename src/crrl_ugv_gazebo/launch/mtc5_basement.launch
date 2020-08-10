@@ -12,7 +12,7 @@
    args="-urdf -param robot_description -model crrl_ugv" />
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find crrl_ugv_gazebo)/worlds/mtc5_sc.world"/>
+    <arg name="world_name" value="$(find crrl_ugv_gazebo)/worlds/mtc5_basement.world"/>
     <arg name="gui" value="$(arg gazebo_gui)"/>
   </include>
 
