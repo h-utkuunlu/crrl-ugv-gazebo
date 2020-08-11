@@ -44,14 +44,14 @@
   <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
 
   <!-- Robot Definition -->
-  <link name="footprint" />
+  <link name="base_footprint"/>
 
   <joint name="base_joint" type="fixed">
-    <parent link="footprint"/>
-    <child link="chassis"/>
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
   </joint>
 
-  <link name='chassis'>
+  <link name='base_link'>
     <collision>
       <origin xyz="0 0 ${wheel_radius}" rpy="0 0 0"/>
       <geometry>
@@ -93,8 +93,8 @@
     </inertial>
   </link>
 
-  <joint name="elec_chassis" type="fixed">
-    <parent link="chassis"/>
+  <joint name="elec_base_link" type="fixed">
+    <parent link="base_link"/>
     <child link="elecBox"/>
   </joint>
 
@@ -118,14 +118,14 @@
   <joint name="camera_joint_left" type="fixed">
     <axis xyz="0 1 0" />
     <origin xyz="${front_wheel_pos} ${camera_baseline*0.5} ${camera_height}" rpy="0 0 0"/>
-    <parent link="chassis"/>
+    <parent link="base_link"/>
     <child link="camera_link_left"/>
   </joint>
 
   <joint name="camera_joint_right" type="fixed">
     <axis xyz="0 1 0" />
     <origin xyz="${front_wheel_pos} ${-camera_baseline*0.5} ${camera_height}" rpy="0 0 0"/>
-    <parent link="chassis"/>
+    <parent link="base_link"/>
     <child link="camera_link_right"/>
   </joint>
 

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <sdf version="1.4">
-<world name="crrl_world">
+<world name="mtc5_basement">
   <include>
     <uri>model://sun</uri>
   </include>
@@ -8,7 +8,7 @@
     <uri>model://ground_plane</uri>
   </include>
   <include>
-    <uri>model://mtc5_basement</uri>
+    <uri>model://mtc5_basement_stl</uri>
   </include>
 </world>
 </sdf>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot name="crrl_ugv" xmlns:xacro="http://www.ros.org/wiki/xacro">
   <!-- Put here the robot description -->
-  <gazebo reference="chassis">
+  <gazebo reference="base_link">
     <material>Gazebo/Grey</material>
   </gazebo>
   <gazebo reference="elecBox">
@@ -26,7 +26,7 @@
       <rightRearJoint>rightBwd_wheel_hinge</rightRearJoint>
       <wheelSeparation>${chassis_width+wheel_width+2*wheel_gap}</wheelSeparation>
       <wheelDiameter>${2*wheel_radius}</wheelDiameter>
-      <robotBaseFrame>footprint</robotBaseFrame>
+      <robotBaseFrame>base_footprint</robotBaseFrame>
       <torque>200</torque>
       <MaxForce>5.0</MaxForce>
       <commandTopic>sim_cmd_vel</commandTopic>
