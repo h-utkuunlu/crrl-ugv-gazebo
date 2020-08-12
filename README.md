@@ -19,16 +19,26 @@ to use stereo camera on board, and
 
 to simulate skid-steering controller. System is tested to work on standard installations found in apt.
 
-# How to run
+# Installation
 
 1. Install prerequisites mentioned above
 1. Download the code: `git clone https://github.com/h-utkuunlu/crrl-ugv-gazebo`
 1. Compile:  `cd crrl-ugv-gazebo && catkin_make`
 1. Copy the model to Gazebo model folder:  `cp -r mtc5_basement_stl ~/.gazebo/models`
 1. [optional, if path is not in ROS] Run `source devel/setup.<ext>` to make packages visible to ROS. Replace `<ext>` with your shell
-1. Run `roslaunch crrl_ugv_gazebo empty_world.launch` to initiate an empty world.
-1. Run `roslaunch crrl_ugv_gazebo mtc5_basement.launch` to initiate MTC5 basement.
-1. To initiate teleop, open a separate terminal and run `roslaunch kbd_interface kbd_interface.launch`. Manual is provided on screen. 
+
+
+# Operation
+
+Currently there are 3 environments supported: empty world (mostly for debugging purposes), Willow Garage environment, and NYU Tandon's MTC5 basement, where CRRL is located. Commands to launch each environment is given below: 
+
+- Run `roslaunch crrl_ugv_gazebo empty_world.launch` to initiate an empty world.
+- Run `roslaunch crrl_ugv_gazebo willowgarage.launch` to initiate Willow Garage environment (see the note below)
+- Run `roslaunch crrl_ugv_gazebo mtc5_basement.launch` to initiate MTC5 basement.
+
+To initiate teleop, open a separate terminal and run `roslaunch kbd_interface kbd_interface.launch`. Manual is provided on screen. 
+
+*Note:* When Willow Garage environment is launched as is, the ground plane and floor of the model interlace, resulting in poor vision data. To resolve the issue it is necessary to lift the Willow Garage environment by about 1mm in their model page. In .gazebo/models/willowgarage/model-1_2.sdf, replace `<pose>-20 -20 0 0 0 0</pose>` with `<pose>-20 -20 0.001 0 0 0</pose>`. This way the camera images are more sensible.
 
 # Options for launch
 
