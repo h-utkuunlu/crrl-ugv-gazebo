@@ -7,21 +7,24 @@ The system depends on
 - velodyne-simulator
 - velodyne-gazebo-plugins
 - pcl-ros
+
 to simulate Velodyne LiDAR attached to the robot,
 - image-proc
 - stereo-image-proc
+
 to use stereo camera on board, and
 - gazebo-ros-control
 - gazebo-plugins
 - gazebo-ros-pkgs
+
 to simulate skid-steering controller. System is tested to work on standard installations found in apt.
 
 # How to run
 
 1. Install prerequisites mentioned above
 1. Download the code: `git clone https://github.com/h-utkuunlu/crrl-ugv-gazebo`
-1. Change directory to the repo and run `catkin_make`
-1. Copy the folder mtc5_basement_stl to Gazebo model folder (i.e. `/home/<user>/.gazebo/models`. Replace <user> with your username)
+1. Compile:  `cd crrl-ugv-gazebo && catkin_make`
+1. Copy the model to Gazebo model folder:  `cp -r mtc5_basement_stl ~/.gazebo/models`
 1. [optional, if path is not in ROS] Run `source devel/setup.<ext>` to make packages visible to ROS. Replace `<ext>` with your shell
 1. Run `roslaunch crrl_ugv_gazebo empty_world.launch` to initiate an empty world.
 1. Run `roslaunch crrl_ugv_gazebo mtc5_basement.launch` to initiate MTC5 basement.
