@@ -23,8 +23,8 @@
     <remap from="/joint_states" to="/crrl_ugv/joint_states"/>
   </node>
 
-  <!-- Node to define tf from stereo camera to chassis (needs tuning)  -->
-  <node name="stereo_tf" pkg="tf" type="static_transform_publisher" args="2 0 0 0.5 -0.5 0.5 -0.5 base_link zed_node/camera_link 100"/>
+  <!-- Node to rotate camera frame (z axis pointing outwards) -->
+  <node name="stereo_tf" pkg="tf" type="static_transform_publisher" args="0 0 0 0.5 -0.5 0.5 -0.5 base_link camera_link 100"/>
 
   <!-- Stereo processing blocks (runs on default. Can be disabled)-->
   <group if="$(arg process_stereo)">
@@ -33,7 +33,7 @@
 
     <!-- Nodelet to convert camera-generated pointcloud to depth image -->
     <!-- Seems to return right camera image directly. Something is wrong -->
-    <node name="pointcloud2depthim" pkg="pcl_ros" type="convert_pointcloud_to_image" args="input:=/zed_node/points2 output:=/zed_node/depth/depth_registered"/>
+    <!-- <node name="pointcloud2depthim" pkg="pcl_ros" type="convert_pointcloud_to_image" args="input:=/zed_node/points2 output:=/zed_node/depth/depth_registered"/> -->
   </group>
   
     <!-- Node to convert teleop messages to simulator-compatible messages -->
