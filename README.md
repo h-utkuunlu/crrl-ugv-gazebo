@@ -47,7 +47,7 @@ To initiate teleop, open a separate terminal and run `roslaunch kbd_interface kb
 
 # Known Issues
 1. ZED camera emulation for depth image is not reliable. Even though pcl_ros package is used to convert the pointcloud (obtained from stereo_image_proc package) to a depth image, it appears to take right camera image directly.
-1. Calibration between camera and VLP is needed. Currently the pointclouds do not overlap
+1. ~~Calibration between camera and VLP is needed. Currently the pointclouds do not overlap~~ Calibration seems OK now with corrected FoV
 1. Positioning of ZED camera (and its associated frame) is approximate. Further refinements are needed
 1. Only stereo camera setup is supported
 1. Odometry information provided from AP module is not present. It is omitted for now since no one is currently using it
