@@ -30,11 +30,7 @@ to simulate skid-steering controller. System is tested to work on standard insta
 
 # Operation
 
-Currently there are 3 environments supported: empty world (mostly for debugging purposes), Willow Garage environment, and NYU Tandon's MTC5 basement, where CRRL is located. Commands to launch each environment is given below: 
-
-- Run `roslaunch crrl_ugv_gazebo empty_world.launch` to initiate an empty world.
-- Run `roslaunch crrl_ugv_gazebo willowgarage.launch` to initiate Willow Garage environment (see the note below)
-- Run `roslaunch crrl_ugv_gazebo mtc5_basement.launch` to initiate MTC5 basement.
+To launch the simulation, run `roslaunch crrl_ugv_gazebo empty_world.launch`
 
 To initiate teleop, open a separate terminal and run `roslaunch kbd_interface kbd_interface.launch`. Manual is provided on screen. 
 
@@ -42,6 +38,7 @@ To initiate teleop, open a separate terminal and run `roslaunch kbd_interface kb
 
 # Options for launch
 
+- world (default mtc5_basement) : .world file to be read. Other option is "empty_world" or "willowgarage" (see above. Needs additional tuning)
 - process_stereo (default true) : Process stereo images to obtain depth, disparity map etc. Can be disabled for LiDAR-only to reduce computational workload.
 - gazebo_gui (default false) : Show Gazebo GUI during simulation.
 
