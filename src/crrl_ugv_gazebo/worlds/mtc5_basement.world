@@ -8,7 +8,7 @@
     <uri>model://ground_plane</uri>
   </include>
   <include>
-    <uri>model://mtc5_basement_stl</uri>
+    <uri>model://mtc5_basement</uri>
   </include>
 </world>
 </sdf>
