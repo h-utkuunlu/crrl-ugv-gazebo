@@ -76,7 +76,7 @@
     <inertial>
       <origin xyz="0 0 ${wheel_radius}" rpy="0 0 0"/>
       <mass value="${chassis_mass}"/>
-      <box_inertia m="${chassis_mass}" x="${chassis_length}" y="${chassis_width}" z="${chassis_height}"/>
+      <xacro:box_inertia m="${chassis_mass}" x="${chassis_length}" y="${chassis_width}" z="${chassis_height}"/>
     </inertial>
   </link>
 
@@ -97,7 +97,7 @@
     <inertial>
       <origin xyz="${elec_box_length/2-chassis_length/2} 0 ${wheel_radius+chassis_height/2+elec_box_height/2}" rpy="0 0 0"/>
       <mass value="${elec_box_mass}"/>
-      <box_inertia m="${elec_box_mass}" x="${elec_box_length}" y="${elec_box_width}" z="${elec_box_height}"/>
+      <xacro:box_inertia m="${elec_box_mass}" x="${elec_box_length}" y="${elec_box_width}" z="${elec_box_height}"/>
     </inertial>
   </link>
 
@@ -135,19 +135,19 @@
   </joint>
   
   <!-- VLP-16 to electrical box -->
-  <VLP-16 parent="elecBox" name="velodyne" topic="/lidar/velodyne_points" hz="10" samples="440" gpu="${gpu}">
+  <xacro:VLP-16 parent="elecBox" name="velodyne" topic="/lidar/velodyne_points" hz="10" samples="440" gpu="${gpu}">
     <origin xyz="${elec_box_length/2-chassis_length/2} 0 ${wheel_radius+chassis_height/2+elec_box_height}" rpy="0 0 0" />
-  </VLP-16>
+  </xacro:VLP-16>
 
 
   <!-- Wheels -->
-  <wheel lr="leftFwd" tY="1" pos="${front_wheel_pos}" gap="${wheel_gap}"/>
-  <wheel lr="leftCt" tY="1" pos="${center_wheel_pos}" gap="${wheel_gap}"/>
-  <wheel lr="leftBwd" tY="1" pos="${rear_wheel_pos}" gap="${wheel_gap}"/>
+  <xacro:wheel lr="leftFwd" tY="1" pos="${front_wheel_pos}" gap="${wheel_gap}"/>
+  <xacro:wheel lr="leftCt" tY="1" pos="${center_wheel_pos}" gap="${wheel_gap}"/>
+  <xacro:wheel lr="leftBwd" tY="1" pos="${rear_wheel_pos}" gap="${wheel_gap}"/>
 
-  <wheel lr="rightFwd" tY="-1" pos="${front_wheel_pos}" gap="${wheel_gap*-1}"/>
-  <wheel lr="rightCt" tY="-1" pos="${center_wheel_pos}" gap="${wheel_gap*-1}"/>
-  <wheel lr="rightBwd" tY="-1" pos="${rear_wheel_pos}" gap="${wheel_gap*-1}"/>
+  <xacro:wheel lr="rightFwd" tY="-1" pos="${front_wheel_pos}" gap="${wheel_gap*-1}"/>
+  <xacro:wheel lr="rightCt" tY="-1" pos="${center_wheel_pos}" gap="${wheel_gap*-1}"/>
+  <xacro:wheel lr="rightBwd" tY="-1" pos="${rear_wheel_pos}" gap="${wheel_gap*-1}"/>
 
 
   <!-- Camera(s) -->

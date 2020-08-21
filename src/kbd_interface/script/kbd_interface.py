@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 # Copyright (c) 2013 PAL Robotics SL.
@@ -72,9 +72,9 @@ class TextWindow():
 
     def write_line(self, lineno, message):
         if lineno < 0 or lineno >= self._num_lines:
-            raise ValueError, 'lineno out of bounds'
+            raise ValueError('lineno out of bounds')
         height, width = self._screen.getmaxyx()
-        y = (height / self._num_lines) * lineno
+        y = int((height / self._num_lines) * lineno)
         x = 3
         for text in message.split('\n'):
             text = text.ljust(width)
