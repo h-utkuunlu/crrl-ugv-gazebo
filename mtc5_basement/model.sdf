@@ -1,20 +1,20 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="mtc5_basement_stl">
+  <model name="mtc5_basement">
     <static>true</static>
-    <pose>-1.2 1.2 0 0 0 -1.5707</pose>
+    <!-- <pose>-1.2 1.2 0 0 0 -1.5707</pose> -->
     <link name="walls">
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://mtc5_basement_stl/meshes/mtc5_basement.stl</uri>
+            <uri>model://mtc5_basement/meshes/mtc5_basement.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://mtc5_basement_stl/meshes/mtc5_basement.stl</uri>
+            <uri>model://mtc5_basement/meshes/mtc5_basement.dae</uri>
           </mesh>
         </geometry>
         <cast_shadows>false</cast_shadows>
