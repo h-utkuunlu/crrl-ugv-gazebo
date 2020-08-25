@@ -30,7 +30,7 @@ to simulate skid-steering controller. System is tested to work on standard insta
 
 # Operation
 
-To launch the simulation, run `roslaunch crrl_ugv_gazebo empty_world.launch`
+To launch the simulation, run `roslaunch crrl_ugv_gazebo environment.launch`
 
 To initiate teleop, open a separate terminal and run `roslaunch kbd_interface kbd_interface.launch`. Manual is provided on screen. 
 
