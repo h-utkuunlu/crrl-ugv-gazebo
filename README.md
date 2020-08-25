@@ -50,7 +50,7 @@ To initiate teleop, open a separate terminal and run `roslaunch kbd_interface kb
 1. Odometry information provided from AP module is not present. It is omitted for now since no one is currently using it
 1. VLP resolution is not as fine compared to original, due to processing issues. Hardware acceleration is supported, but it is currently deactivated. To enable, modify the appropriate xacro property in src/crrl_ugv_desc/urdf/crrl_ugv.xacro
 1. Collision boxes for the wheels are set to be a narrow disk rather than its full height. Otherwise, turns are not at all realistic
-1. MTC5 map is based on an STL and as such lacks any visual features. Gazebo loads the COLLADA file exported from Onshape partially (i.e. most doors are missing)
+1. ~~MTC5 map is based on an STL and as such lacks any visual features. Gazebo loads the COLLADA file exported from Onshape partially (i.e. most doors are missing)~~ Features with texture added
 
 # TO DO
 - [X] Add MTC5 map
